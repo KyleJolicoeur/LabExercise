@@ -1,5 +1,5 @@
-package labex3;
-public class LabEx2 
+package labex4;
+public class LabEx4 
 {
     public static void main(String[] args) 
     {

@@ -1,6 +1,6 @@
 package jUnit;
 
-import labex3.BridgeGui;
+import labex4.BridgeGui;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

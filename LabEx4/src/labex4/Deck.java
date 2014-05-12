@@ -1,12 +1,15 @@
-package labex3;
+package labex4;
 import java.util.Stack;
 public class Deck 
 {
        public static final int DECK_SIZE = 52;//initial max deck size
-          Card[] arrayDeck = new Card[DECK_SIZE];
+       public static int tarotDeckSize;
+       Card[] arrayDeck;
    /*********************************************************************/
        public Deck()
-       {
+       { //used for normal decks
+          arrayDeck = new Card[DECK_SIZE];
+          tarotDeckSize = DECK_SIZE;
           for(int i=0; i<13; i++)
             { //creates the Spades cards
                 arrayDeck[i] = new Card(i,"Spades");
@@ -28,7 +31,7 @@ public class Deck
                 arrayDeck[i + 39].setId(i + 39);
             }
         }
-
+       
     public Card getCardID(int i) {
         return arrayDeck[i];
     }
@@ -51,9 +54,10 @@ public class Deck
        }
     public void display()
     {
-        for(int i = 0; i < DECK_SIZE; i++)
+        for(int i = 0; i < arrayDeck.length; i++)
         {
-            System.out.println(this.arrayDeck[i].getId() );
+            System.out.println(arrayDeck[i].getSuit() + " " + arrayDeck[i].getId()
+            + " " + arrayDeck[i].checkFaceValue());
         }
     }
 }

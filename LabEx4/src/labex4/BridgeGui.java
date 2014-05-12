@@ -1,4 +1,4 @@
-package labex3;
+package labex4;
 
 import java.util.Stack;
 import javax.swing.JOptionPane;

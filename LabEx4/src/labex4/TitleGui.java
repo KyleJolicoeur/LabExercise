@@ -1,14 +1,15 @@
-package labex3;
+package labex4;
 import java.awt.*;
 import java.awt.event.*;
 
 public class TitleGui extends Frame
 {
     public static String WHICH_GAME;
-    public static final List GAME_LIST = new List(3, false);
+    public static final List GAME_LIST = new List(4, false);
     public static final String WAR = "War (The Card Game)";
     public static final String SHUFFLE = "Poker Hand Shuffler";
     public static final String BRIDGE = "Card Comparison (Bridge)";
+    public static final String TAROT = "Tarot Card Readings";
     
     public TitleGui()
     {   
@@ -26,13 +27,14 @@ public class TitleGui extends Frame
         constraints.gridwidth = 0;
         constraints.gridheight = 2;
         
-        add(new Label("Welcome to the Card Game Simulation v0.3"),constraints);
+        add(new Label("Welcome to the Card Game Simulation v0.4"),constraints);
         add(new Label("                Please Select a game:"),constraints);
         
         add(GAME_LIST,constraints);
         GAME_LIST.add(SHUFFLE);
         GAME_LIST.add(WAR);
         GAME_LIST.add(BRIDGE);
+        GAME_LIST.add(TAROT);
         GAME_LIST.select(0);
         //submit button
         add(btnSubmit,constraints);
@@ -69,21 +71,27 @@ public class TitleGui extends Frame
             switch (WHICH_GAME) 
             {
                 case SHUFFLE:
-                    ShuffleGui sGui= new ShuffleGui();
-                    sGui.setSize(220,430);
-                    sGui.setVisible(true);
-                    sGui.setLocationRelativeTo(null);
+                    ShuffleGui shGui= new ShuffleGui();
+                    shGui.setSize(220,430);
+                    shGui.setVisible(true);
+                    shGui.setLocationRelativeTo(null);
                     break;
                 case WAR:
-                    WarGui wGui= new WarGui();
-                    wGui.setSize(550,520);
-                    wGui.setVisible(true);
-                    wGui.setLocationRelativeTo(null);
+                    WarGui waGui= new WarGui();
+                    waGui.setSize(550,520);
+                    waGui.setVisible(true);
+                    waGui.setLocationRelativeTo(null);
                     break;
                 case BRIDGE:
-                    BridgeGui bGui = new BridgeGui();
-                    bGui.setVisible(true);
-                    bGui.setLocationRelativeTo(null);
+                    BridgeGui brGui = new BridgeGui();
+                    brGui.setVisible(true);
+                    brGui.setLocationRelativeTo(null);
+                    break;
+                case TAROT:
+                    TarotGui taGui = new TarotGui();
+                    taGui.setVisible(true);
+                    taGui.setLocationRelativeTo(null);
+                    break;
             }
         }
     }

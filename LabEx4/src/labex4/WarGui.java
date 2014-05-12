@@ -1,4 +1,4 @@
-package labex3;
+package labex4;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -677,6 +677,17 @@ public class WarGui extends Frame
            tfMyCard.setText("");
            tfOppCard.setText("");
            iMyDiscard = 0;
+           if(stackMyDeck != null && stackOppDeck != null)
+           {
+                stackMyDeck=null;
+                stackMyDeck=new Stack();
+                stackOppDeck=null;
+                stackOppDeck= new Stack();
+           }
+           stackMyDiscard=null;
+           stackMyDiscard = new Stack();
+           stackOppDiscard = null;
+           stackOppDiscard= new Stack();
            iOppDiscard = 0;
            tfMyDiscard.setText("0");
            tfOppDiscard.setText("0");

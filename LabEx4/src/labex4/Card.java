@@ -1,4 +1,4 @@
-package labex3;
+package labex4;
 public class Card
 {
     private String sSuit;
@@ -18,6 +18,9 @@ public class Card
         sFaceValue = sFace;
         sSuit= sSui;
     }
+    
+    
+    
     public String getSuit() 
     {
         return (sSuit);
@@ -41,6 +44,10 @@ public class Card
     public void setFaceValue(String sFace) 
     {
         this.sFaceValue = sFace;
+    }
+    public String getAll()
+    {
+        return (checkFaceValue() + " of " + getSuit());
     }
     public String checkFaceValue()
     {
@@ -74,6 +81,8 @@ public class Card
             case "12": value = "King ";
                 break;
             case "13": value = "Ace  ";
+                break;
+            case "14": value = "Knight";
                 break;
             default: value = "error";
                 break;
